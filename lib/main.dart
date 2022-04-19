@@ -126,6 +126,8 @@ Future<void> main() async {
 
 
   runApp(const MyApp());
+
+
   fcmSubscribe();
 }
 fcmSubscribe() async {
@@ -191,7 +193,7 @@ class _MyAppState extends State<MyApp> {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home:IndexPage(),
+        home:MyApp10(),
 
 
       //  LanguagePage(),
@@ -580,7 +582,7 @@ class _PluginclassState extends State<Pluginclass> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Maps ()),
+                      MaterialPageRoute(builder: (context) => Maps()),
                     );
                   },
                   child: Text("Map Marker")),

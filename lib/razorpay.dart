@@ -1,8 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
 import 'package:razorpay_flutter/razorpay_flutter.dart';
-
 import 'package:fluttertoast/fluttertoast.dart';
 
 
@@ -16,21 +15,36 @@ class _MyApp10State extends State<MyApp10> {
   static const platform = const MethodChannel("razorpay_flutter");
 
    Razorpay _razorpay;
+   TextEditingController amount = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-
         appBar: AppBar(
           title: const Text('Razorpay Sample App'),
         ),
-        body: Center(
-            child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  ElevatedButton(onPressed: openCheckout, child: Text('Open'))
-                ])),
+        body: Padding(
+          padding: const EdgeInsets.all(15),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+
+              Text("Enter Amount", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),textAlign: TextAlign.center,),
+              SizedBox(height: 10,),
+              TextField(
+                controller: amount,
+                keyboardType: TextInputType.number,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: "Enter Amount"
+                ),
+              ),
+                SizedBox(height: 10,),
+                ElevatedButton(onPressed: openCheckout, child: Text('Submit')),
+            ],
+          ),
+        ),
       ),
     );
   }
@@ -52,13 +66,14 @@ class _MyApp10State extends State<MyApp10> {
 
   void openCheckout() async {
     var options = {
-      'key': 'rzp_live_ILgsfZCZoFIKMb',
-      'amount': 100,
-      'name': 'Acme Corp.',
+    //  'key': 'rzp_test_kugnpqevx7BjiS',
+      'key': 'rzp_test_YPJu0Z0fo0lQSU',
+      'amount': int.parse(amount.text ) * 100,
+      'name': 'Panchratna Fashion',
       'description': 'Fine T-Shirt',
       'retry': {'enabled': true, 'max_count': 1},
       'send_sms_hash': true,
-      'prefill': {'contact': '8888888888', 'email': 'test@razorpay.com'},
+      'prefill': {'contact': '8866609678', 'email': 'akashlike.v@gmail.com'},
       'external': {
         'wallets': ['paytm']
       }
@@ -73,19 +88,49 @@ class _MyApp10State extends State<MyApp10> {
 
   void _handlePaymentSuccess(PaymentSuccessResponse response) {
     Fluttertoast.showToast(
-        msg: "SUCCESS: " + response.paymentId,
-        toastLength: Toast.LENGTH_SHORT);
+        msg: "Your Payment Will Sucessful"
+          //  + response.paymentId,
+       // toastLength: Toast.LENGTH_SHORT
+    );
   }
 
   void _handlePaymentError(PaymentFailureResponse response) {
+    Notification();
     Fluttertoast.showToast(
-        msg: "ERROR: " + response.code.toString() + " - " + response.message,
-        toastLength: Toast.LENGTH_SHORT);
+        msg: "Your Payment Will Be Fail"
+         //   + response.code.toString()
+        //    + " - " + response.message,
+      //  toastLength: Toast.LENGTH_SHORT
+
+    );
   }
 
   void _handleExternalWallet(ExternalWalletResponse response) {
     Fluttertoast.showToast(
-        msg: "EXTERNAL_WALLET: " + response.walletName,
-        toastLength: Toast.LENGTH_SHORT);
+        msg: "EXTERNAL_WALLET: "
+         //   + response.walletName,
+      //  toastLength: Toast.LENGTH_SHORT
+    );
+  }
+}
+
+class Notification extends StatefulWidget {
+  const Notification({Key key}) : super(key: key);
+
+  @override
+  _NotificationState createState() => _NotificationState();
+}
+
+class _NotificationState extends State<Notification> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+
+        ],
+      ),
+    );
   }
 }
