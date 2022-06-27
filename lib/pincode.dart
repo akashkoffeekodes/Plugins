@@ -201,7 +201,7 @@ class _PinCodeVerificationScreenState extends State<PinCodeVerificationScreen> {
               const EdgeInsets.symmetric(vertical: 16.0, horizontal: 30),
               child: ButtonTheme(
                 height: 50,
-                child: FlatButton(
+                child: ElevatedButton(
                   onPressed: () {
                     formKey.currentState.validate();
                     // conditions for validating
@@ -211,14 +211,15 @@ class _PinCodeVerificationScreenState extends State<PinCodeVerificationScreen> {
                       setState(() {
                         hasError = true;
                       });
-                    } else {
-                      setState(() {
-                        hasError = false;
-                        scaffoldKey.currentState.showSnackBar(SnackBar(
-                          content: Text("Aye!!"),
-                          duration: Duration(seconds: 2),
-                        ));
-                      });
+                    }
+                    else {
+                      // setState(() {
+                      //   hasError = false;
+                      //   scaffoldKey.currentState.showSnackBar(SnackBar(
+                      //     content: Text("Aye!!"),
+                      //     duration: Duration(seconds: 2),
+                      //   ));
+                      // });
                     }
                   },
                   child: Center(
@@ -251,13 +252,13 @@ class _PinCodeVerificationScreenState extends State<PinCodeVerificationScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                FlatButton(
+                ElevatedButton(
                   child: Text("Clear"),
                   onPressed: () {
                     textEditingController.clear();
                   },
                 ),
-                FlatButton(
+                ElevatedButton(
                   child: Text("Set Text"),
                   onPressed: () {
                     textEditingController.text = "123456";

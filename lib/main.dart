@@ -11,7 +11,7 @@ import 'package:hive/hive.dart';
 import 'package:plugins/local/localization/demo_localization.dart';
 import 'package:plugins/animation.dart';
 import 'package:plugins/clipboard.dart';
-import 'package:plugins/condition%20pratice.dart';
+
 import 'package:plugins/darkthem.dart';
 import 'package:plugins/geolocation.dart';
 import 'package:plugins/googlepay.dart';
@@ -193,7 +193,7 @@ class _MyAppState extends State<MyApp> {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home:MyApp10(),
+        home: Pluginclass(),
 
 
       //  LanguagePage(),
@@ -738,17 +738,7 @@ class _PluginclassState extends State<Pluginclass> {
                   child: Text("Dark them")),
 
 
-              SizedBox(
-                height: 15,
-              ),
-              ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Con()),
-                    );
-                  },
-                  child: Text("conx")),
+
 
 
               SizedBox(

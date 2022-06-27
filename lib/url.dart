@@ -22,7 +22,7 @@ class _UrllauncherState extends State<Urllauncher> {
         title: Text("Url launcher"),
       ),
       body:Center(
-        child: RaisedButton(
+        child: ElevatedButton(
           onPressed: _launchURL,
           child: Text("Go to flutter ",style: TextStyle(fontSize: 15),),
         ),

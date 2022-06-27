@@ -862,13 +862,13 @@ class _SecondPageState extends State<SecondPage> {
             Container(
               height: 50.0,
               margin: EdgeInsets.only(bottom: 20.0),
-              child: RaisedButton(
+              child: ElevatedButton(
                 onPressed: () {
                   showToast(
                     'This is normal toast',
                   );
                 },
-                color: Colors.blue,
+
                 child: Text(
                   "normal toast",
                   style: TextStyle(fontSize: 15.0, color: Colors.white),

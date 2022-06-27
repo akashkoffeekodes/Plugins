@@ -123,7 +123,7 @@ class _LoadingListPageState extends State<LoadingListPage> {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 8.0),
-              child: FlatButton(
+              child: ElevatedButton(
                   onPressed: () {
                     setState(() {
                       _enabled = !_enabled;

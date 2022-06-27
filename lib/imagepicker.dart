@@ -92,7 +92,7 @@ class _MyHomePage0State extends State<MyHomePage0
                     "Click on Pick Image to select an Image",
                     style: TextStyle(fontSize: 18.0),
                   ),
-                RaisedButton(
+               ElevatedButton(
                   onPressed: () {
                     _pickImageFromGallery();
                   },
@@ -108,7 +108,7 @@ class _MyHomePage0State extends State<MyHomePage0
                     "Click on Pick Image to select an Image",
                     style: TextStyle(fontSize: 18.0),
                   ),
-                RaisedButton(
+                ElevatedButton(
                   onPressed: () {
                     _pickImageFromCamera();
                   },
@@ -126,7 +126,7 @@ class _MyHomePage0State extends State<MyHomePage0
                     "Click on Pick Video to select video",
                     style: TextStyle(fontSize: 18.0),
                   ),
-                RaisedButton(
+                ElevatedButton(
                   onPressed: () {
                     _pickVideo();
                   },
@@ -145,7 +145,7 @@ class _MyHomePage0State extends State<MyHomePage0
                     "Click on Pick Video to select video",
                     style: TextStyle(fontSize: 18.0),
                   ),
-                RaisedButton(
+                ElevatedButton(
                   onPressed: () {
                     _pickVideoFromCamera();
                   },

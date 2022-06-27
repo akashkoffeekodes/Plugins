@@ -38,7 +38,7 @@ class _GeolocationState extends State<Geolocation> {
                 if (_currentAddress != null) Text(
                     _currentAddress
                 ),
-                FlatButton(
+                ElevatedButton(
                   child: Text("Get location"),
                   onPressed: () {
                     _getCurrentLocation();
